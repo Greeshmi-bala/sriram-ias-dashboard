@@ -1,395 +1,385 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anubhuti II - Examination Portal</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Inter:wght@300;400;500;600&display=swap');
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anubhuti III - Examination Portal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f3f4f6;
+      min-height: 100vh;
+    }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #f3f4f6;
-            min-height: 100vh;
-            overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
-        }
+    /* ── HEADER ── */
+    .top-header {
+      background: #ffffff;
+      padding: 14px 40px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #e5e7eb;
+    }
 
-        /* NAVBAR */
-        .navbar {
-            height: 70px;
-            background: #d1d5db;
-            display: flex;
-            align-items: center;
-            padding: 0 40px;
-            flex-shrink: 0;
-        }
+    .logo-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-        .logo-wrap {
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
+    .years-logo { height: 52px; }
+    .main-logo  { height: 56px; }
 
-        .logo-small { height: 40px; }
-        .logo-main  { height: 42px; }
+    /* ── BANNER ── */
+    .banner-section {
+      width: 100%;
+      max-height: 380px;
+      overflow: hidden;
+      background: #c7d2e8;
+    }
 
-        /* MAIN LAYOUT */
-        .container {
-            display: flex;
-            padding: 45px 40px;
-            gap: 10px;
-            max-width: 1200px;
-            margin: 0 auto;
-            align-items: flex-start;
-        }
+    .banner-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
 
-        /* LEFT SIDE */
-        .left {
-            flex: 1;
-            padding: 8% 20px 15px 20px;
-            text-align: center;
-        }
+    /* ── CONTENT SECTION ── */
+    .content-section {
+      display: flex;
+      gap: 40px;
+      padding: 50px 60px;
+      max-width: 1300px;
+      margin: 0 auto;
+      align-items: flex-start;
+    }
 
-        .title {
-            font-family: 'Libre Baskerville', serif;
-            font-size: 78px;
-            color: #0b1b3b;
-            line-height: 1.1;
-            margin-bottom: 8px;
-            letter-spacing: -1px;
-        }
+    /* ── LEFT ── */
+    .left-content {
+      flex: 1;
+      padding-top: 10px;
+    }
 
-        .subtitle {
-            color: #c53030;
-            font-size: 17px;
-            font-weight: 500;
-            margin-bottom: 15px;
-            text-align: center;
-        }
+    .title {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 76px;
+      font-weight: 700;
+      color: #0b1b3b;
+      line-height: 1.05;
+      letter-spacing: -1px;
+      margin-bottom: 10px;
+    }
 
-        /* INFO BOXES */
-        .info-box {
-            display: flex;
-            gap: 15px;
-            margin-top: 25px;
-            justify-content: center;
-        }
+    .subtitle {
+      color: #c53030;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
 
-        .card {
-            background: #f9fafb;
-            padding: 16px;
-            border-radius: 10px;
-            width: 180px;
-            border: 1px solid #e5e7eb;
-        }
+    .tagline {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      margin-bottom: 32px;
+    }
 
-        .card p {
-            font-size: 11px;
-            color: #9ca3af;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
+    .blue-text { color: #1d4ed8; }
+    .gray-text  { color: #6b7280; }
+    .pink-text  { color: #f9a8d4; }
+    .dot        { color: #9ca3af; margin: 0 8px; }
 
-        .card h4 {
-            margin-top: 8px;
-            color: #111827;
-            font-size: 15px;
-            font-weight: 600;
-        }
+    .exam-card {
+      display: inline-block;
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 16px 28px;
+      min-width: 230px;
+    }
 
-        /* RIGHT SIDE */
-        .right {
-            width: 400px;
-            margin-top: 20px;
-        }
+    .exam-label {
+      font-size: 12px;
+      color: #9ca3af;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
 
-        .form-box {
-            background: #ffffff;
-            padding: 32px 28px;
-            border-radius: 14px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.06);
-            border: 1px solid #e5e7eb;
-        }
+    .exam-date {
+      font-size: 16px;
+      font-weight: 700;
+      color: #111827;
+    }
 
-        .form-box h2 {
-            font-family: 'Libre Baskerville', serif;
-            font-size: 22px;
-            margin-bottom: 8px;
-            color: #0b1b3b;
-        }
+    /* ── RIGHT / LOGIN CARD ── */
+    .right-content {
+      width: 420px;
+      flex-shrink: 0;
+    }
 
-        .form-box p {
-            color: #6b7280;
-            font-size: 13px;
-            margin-bottom: 25px;
-            line-height: 1.6;
-        }
+    .login-card {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 36px 32px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.07);
+    }
 
-        .input { margin-bottom: 20px; }
+    .card-title {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #1d4ed8;
+      text-align: center;
+      letter-spacing: 1px;
+      margin-bottom: 28px;
+    }
 
-        .input label {
-            font-size: 11px;
-            color: #6b7280;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            display: block;
-            margin-bottom: 6px;
-        }
+    .input-label {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      color: #374151;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 10px;
+    }
 
-        .input-wrap {
-            display: flex;
-            align-items: center;
-            border-bottom: 1.8px solid #cbd5e1;
-            padding: 8px 0;
-            transition: all 0.3s;
-        }
+    .input-wrapper {
+      display: flex;
+      align-items: center;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      padding: 12px 14px;
+      background: #f9fafb;
+      margin-bottom: 6px;
+      transition: border-color 0.2s;
+    }
 
-        .input-wrap .icon {
-            margin-right: 10px;
-            font-size: 15px;
-            opacity: 0.7;
-        }
+    .input-wrapper:focus-within {
+      border-color: #0b1b3b;
+      background: #fff;
+    }
 
-        .input-wrap input {
-            border: none;
-            outline: none;
-            flex: 1;
-            background: transparent;
-            font-size: 15px;
-        }
+    .input-icon {
+      margin-right: 10px;
+      display: flex;
+      align-items: center;
+      font-size: 15px;
+      opacity: 0.6;
+    }
 
-        .input-wrap:focus-within {
-            border-bottom: 2px solid #0b1b3b;
-        }
+    .phone-icon-img {
+      width: 16px;
+      height: 16px;
+      opacity: 0.5;
+    }
 
-        .help-text {
-            text-align: center;
-            margin-top: 18px;
-        }
+    .input-wrapper input {
+      border: none;
+      outline: none;
+      flex: 1;
+      background: transparent;
+      font-size: 14px;
+      color: #111827;
+      font-family: 'Inter', sans-serif;
+    }
 
-        .assist {
-            font-size: 12px;
-            color: #9ca3af;
-        }
+    .input-wrapper input::placeholder {
+      color: #9ca3af;
+      font-size: 13px;
+    }
 
-        /* ERROR MESSAGE */
-        .error {
-            display: none;
-            background: #fde8e8;
-            color: #b91c1c;
-            padding: 10px 12px;
-            border-radius: 6px;
-            font-size: 12.5px;
-            margin: 10px 0 14px;
-            border: 1px solid #fca5a5;
-        }
+    .error-message {
+      color: #b91c1c;
+      font-size: 12px;
+      min-height: 18px;
+      margin-bottom: 16px;
+    }
 
-        .input.error-active .input-wrap {
-            border-bottom: 2px solid #dc2626 !important;
-        }
+    .login-btn {
+      width: 100%;
+      background: #0b1b3b;
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      padding: 16px;
+      font-size: 16px;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      letter-spacing: 0.3px;
+      transition: background 0.2s, transform 0.15s;
+      margin-bottom: 18px;
+    }
 
-        /* BUTTON */
-        .btn {
-            width: 100%;
-            background: #0b1b3b;
-            color: white;
-            padding: 16px;
-            border-radius: 8px;
-            border: none;
-            cursor: pointer;
-            font-size: 15px;
-            font-weight: 500;
-            transition: all 0.3s;
-            margin-top: 10px;
-        }
+    .login-btn:hover  { background: #1e3a6e; transform: translateY(-1px); }
+    .login-btn:active { transform: translateY(0); }
+    .login-btn:disabled { opacity: 0.6; cursor: not-allowed; }
 
-        .btn:hover {
-            background: #1e293b;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 12px rgba(11, 27, 59, 0.2);
-        }
+    .assistance-text {
+      text-align: center;
+      font-size: 13px;
+      color: #6b7280;
+    }
 
-        .btn:active { transform: translateY(0); }
+    .assistance-text span { font-weight: 700; color: #111827; }
+    .assist-icon { margin-right: 4px; }
 
-        .btn:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-        }
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .content-section { flex-direction: column; padding: 30px 24px; gap: 30px; }
+      .right-content   { width: 100%; }
+      .title           { font-size: 52px; }
+    }
 
-        /* RESPONSIVE */
-        @media (max-width: 968px) {
-            .navbar { padding: 0 20px; }
-            .container { flex-direction: column; padding: 20px; }
-            .left { text-align: center; padding: 15px; }
-            .title { font-size: 42px; }
-            .info-box { justify-content: center; gap: 10px; }
-            .card { width: 160px; padding: 12px; }
-            .right { width: 100%; max-width: 400px; margin: 0 auto; }
-        }
-
-        @media (max-width: 480px) {
-            .navbar { height: 60px; padding: 0 15px; }
-            .logo-small { height: 32px; }
-            .logo-main { height: 34px; }
-            .container { padding: 15px; margin-top: 10px; }
-            .left { padding: 10px; }
-            .title { font-size: 32px; }
-            .subtitle { font-size: 13px; }
-            .info-box { flex-direction: column; align-items: center; gap: 10px; margin-top: 20px; }
-            .card { width: 100%; max-width: 280px; padding: 12px; }
-            .right { margin-top: 20px; }
-            .form-box { padding: 24px 20px; border-radius: 12px; }
-            .form-box h2 { font-size: 24px; }
-            .form-box p { font-size: 12px; }
-            .input label { font-size: 10px; }
-            .input-wrap input { font-size: 14px; }
-            .btn { padding: 14px; font-size: 14px; }
-            .error { font-size: 11px; padding: 8px 10px; }
-        }
-    </style>
+    @media (max-width: 480px) {
+      .top-header      { padding: 12px 20px; }
+      .years-logo      { height: 38px; }
+      .main-logo       { height: 42px; }
+      .banner-section  { max-height: 200px; }
+      .content-section { padding: 20px 16px; }
+      .title           { font-size: 38px; }
+      .subtitle        { font-size: 16px; }
+      .tagline         { font-size: 17px; }
+      .login-card      { padding: 24px 20px; }
+    }
+  </style>
 </head>
 <body>
-    <!-- NAVBAR -->
-    <div class="navbar">
-        <div class="logo-wrap">
-            <img src="logos-40-years.png" alt="40 Years Logo" class="logo-small">
-            <img src="Logo.png" alt="Sriram IAS Logo" class="logo-main">
+  <div id="app">
+    <div class="page">
+
+      <!-- HEADER -->
+      <header class="top-header">
+        <div class="logo-row">
+          <img src="/assets/logos-40-years 1.png" alt="40 Years Icon" class="years-logo" />
+          <img src="/assets/SRIRAM's-IAS.png" alt="Sriram IAS Logo" class="main-logo" />
         </div>
-    </div>
+      </header>
 
-    <!-- MAIN CONTAINER -->
-    <div class="container">
-        <!-- LEFT SIDE -->
-        <div class="left">
-            <h1 class="title">ANUBHUTI II</h1>
-            <p class="subtitle">All India Open Mock Test 2026</p>
+      <!-- BANNER -->
+      <section class="banner-section">
+        <img src="/assets/ANUBHUTI-III-Banner.JPG.jpeg" alt="Banner" class="banner-image" />
+      </section>
 
-            <div class="info-box">
-                <div class="card">
-                    <p>Examination Date</p>
-                    <h4>March 29, 2026</h4>
-                </div>
+      <!-- MAIN CONTENT -->
+      <section class="content-section">
+
+        <!-- LEFT -->
+        <div class="left-content">
+          <h1 class="title">ANUBHUTI III</h1>
+          <p class="subtitle">All India Open Mock Test 2026</p>
+          <p class="tagline">
+            <span class="blue-text">TEST</span>
+            <span class="dot">.</span>
+            <span class="gray-text">RANK</span>
+            <span class="dot">.</span>
+            <span class="pink-text">RISE</span>
+          </p>
+          <div class="exam-card">
+            <p class="exam-label">Examination Date</p>
+            <p class="exam-date">April 18th Saturday, 2026</p>
+          </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="right-content">
+          <div class="login-card">
+            <h2 class="card-title">CANDIDATE DETAILS</h2>
+            <label for="mobileNumber" class="input-label">Mobile Number</label>
+            <div class="input-wrapper">
+              <span class="input-icon">
+                <img src="/assets/phone-solid-full.svg" alt="phone icon" class="phone-icon-img"
+                     onerror="this.outerHTML='📱'" />
+              </span>
+              <input
+                type="tel"
+                id="mobileNumber"
+                maxlength="10"
+                placeholder="Enter your registered 10 digit mobile number"
+                autocomplete="off"
+                pattern="[0-9]{10}"
+              />
             </div>
+            <p id="errorMessage" class="error-message"></p>
+            <button id="loginBtn" class="login-btn">Login →</button>
+            <p class="assistance-text">
+              <span class="assist-icon">🎧</span>
+              For any Assistance call <span>9811489560</span>
+            </p>
+          </div>
         </div>
 
-        <!-- RIGHT SIDE -->
-        <div class="right">
-            <div class="form-box" id="formBox">
-                <h2>CANDIDATE DETAILS</h2>
-                <p>Enter your 10-digit mobile number to view your results.</p>
-
-                <form id="loginFormElement">
-                    <div class="input" id="phoneInputGroup">
-                        <label>Mobile Number</label>
-                        <div class="input-wrap">
-                            <span class="icon">📱</span>
-                            <input
-                                type="tel"
-                                id="phone"
-                                placeholder="Registered 10-digit Number"
-                                required
-                                pattern="[0-9]{10}"
-                                maxlength="10"
-                            >
-                        </div>
-                    </div>
-
-                    <div class="error" id="errorBox">
-                        Invalid mobile number. Please check and try again.
-                    </div>
-
-                    <button type="submit" class="btn" id="loginBtn">
-                        View Results →
-                    </button>
-
-                    <div class="help-text">
-                        <p class="assist">🎧 For any Assistance call 9811489560</p>
-                    </div>
-                </form>
-            </div>
-        </div>
+      </section>
     </div>
+  </div>
 
-    <script>
-        // Auto-detect environment
-        const hostname = window.location.hostname;
-        const isLocalhost = hostname === 'localhost' || hostname === '127.0.0.1';
+  <script>
+    const hostname = window.location.hostname;
+    const isLocalhost = hostname === 'localhost' || hostname === '127.0.0.1';
+    const API_BASE_URL = isLocalhost
+      ? 'http://localhost:5000'
+      : 'https://sriram-ias.onrender.com';
 
-        const API_BASE_URL = isLocalhost
-            ? 'http://localhost:5000'
-            : 'https://sriram-ias.onrender.com';
+    const mobileInput = document.getElementById('mobileNumber');
+    const loginBtn    = document.getElementById('loginBtn');
+    const errorMsg    = document.getElementById('errorMessage');
 
-        console.log("🌐 Using API:", API_BASE_URL);
+    // Only allow digits
+    mobileInput.addEventListener('input', () => {
+      mobileInput.value = mobileInput.value.replace(/\D/g, '');
+      errorMsg.textContent = '';
+    });
 
-        const loginFormElement = document.getElementById('loginFormElement');
-        const errorBox = document.getElementById('errorBox');
-        const loginBtn = document.getElementById('loginBtn');
+    // Enter key support
+    mobileInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') loginBtn.click();
+    });
 
-        loginFormElement.addEventListener('submit', async (e) => {
-            e.preventDefault();
+    loginBtn.addEventListener('click', async () => {
+      const phone = mobileInput.value.trim();
 
-            const phone = document.getElementById('phone').value.trim();
+      if (!phone || phone.length !== 10 || !/^\d{10}$/.test(phone)) {
+        errorMsg.textContent = 'Invalid mobile number. Please enter a valid 10-digit number.';
+        return;
+      }
 
-            // Validate phone (10 digits only)
-            if (!phone || phone.length !== 10 || !/^\d{10}$/.test(phone)) {
-                showError('Invalid mobile number. Please enter a valid 10-digit number.');
-                return;
-            }
+      setLoading(true);
 
-            setLoading(true);
+      try {
+        const controller = new AbortController();
+        setTimeout(() => controller.abort(), 10000);
 
-            try {
-                const controller = new AbortController();
-                setTimeout(() => controller.abort(), 10000);
-
-                const response = await fetch(`${API_BASE_URL}/auth/verify-login`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ phone }),
-                    signal: controller.signal
-                });
-
-                const data = await response.json();
-
-                if (response.ok) {
-                    window.location.href = `dashboard.html?phone=${encodeURIComponent(phone)}`;
-                } else {
-                    showError('Invalid mobile number. Please check and try again.');
-                }
-            } catch (error) {
-                console.error('Login error:', error);
-                showError('Unable to connect. Please try again.');
-            } finally {
-                setLoading(false);
-            }
+        const response = await fetch(`${API_BASE_URL}/auth/verify-login`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ phone }),
+          signal: controller.signal
         });
 
-        function showError(msg) {
-            errorBox.textContent = msg || 'Invalid mobile number. Please check and try again.';
-            errorBox.style.display = 'block';
-            document.querySelectorAll('.input').forEach(el => el.classList.add('error-active'));
-            setTimeout(hideError, 5000);
+        if (response.ok) {
+          window.location.href = `dashboard.html?phone=${encodeURIComponent(phone)}`;
+        } else {
+          errorMsg.textContent = 'Invalid mobile number. Please check and try again.';
         }
+      } catch (err) {
+        errorMsg.textContent = 'Unable to connect. Please try again.';
+      } finally {
+        setLoading(false);
+      }
+    });
 
-        function hideError() {
-            errorBox.style.display = 'none';
-            document.querySelectorAll('.input').forEach(el => el.classList.remove('error-active'));
-        }
-
-        function setLoading(isLoading) {
-            loginBtn.disabled = isLoading;
-            loginBtn.innerHTML = isLoading ? 'Verifying... ⏳' : 'View Results →';
-        }
-    </script>
+    function setLoading(isLoading) {
+      loginBtn.disabled = isLoading;
+      loginBtn.textContent = isLoading ? 'Verifying... ⏳' : 'Login →';
+    }
+  </script>
 </body>
 </html>
